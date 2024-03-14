@@ -17,5 +17,9 @@ public class BulletBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (other.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
