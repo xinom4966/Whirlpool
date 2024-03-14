@@ -8,11 +8,14 @@ public class BulletBehaviour : MonoBehaviour
     [SerializeField] private float speed;
     private void Update()
     {
-        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + 1 * -speed);
+        rb.velocity = new Vector2(rb.velocity.x, -speed);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

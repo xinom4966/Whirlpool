@@ -13,7 +13,10 @@ public class FeetBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        player.SetGround(true);
+        if (other.CompareTag("Ground"))
+        {
+            player.SetGround(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)

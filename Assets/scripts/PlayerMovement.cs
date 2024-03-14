@@ -32,14 +32,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnActionEnter(InputAction.CallbackContext context)
     {
-        if (isGrounded)
+        if (context.started)
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
-        }
-        else
-        {
-            Shoot();
-            rb.AddForce(new Vector2(0f, jumpForce * 0.25f));
+            if (isGrounded)
+            {
+                rb.AddForce(new Vector2(0f, jumpForce));
+            }
+            else
+            {
+                Shoot();
+                if (rb.velocity.y < -0.5f)
+                {
+                    rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                }
+                rb.velocity += Vector3.up * 0.25f;
+            }
         }
     }
 
