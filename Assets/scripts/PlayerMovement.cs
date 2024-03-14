@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Collider groundCheck;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform bulletSpawner;
     private bool isGrounded;
     private Vector2 moveInput;
     public static PlayerMovement instance;
@@ -34,10 +36,20 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(new Vector2(0f, jumpForce));
         }
+        else
+        {
+            Shoot();
+            rb.AddForce(new Vector2(0f, jumpForce * 0.25f));
+        }
     }
 
     public void SetGround(bool value)
     {
         isGrounded = value;
+    }
+
+    private void Shoot()
+    {
+        GameObject.Instantiate(bulletPrefab, bulletSpawner);
     }
 }
