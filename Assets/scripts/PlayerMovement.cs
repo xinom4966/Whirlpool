@@ -59,4 +59,9 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject.Instantiate(bulletPrefab, bulletSpawner);
     }
+
+    public void Bounce(float bounce)
+    {
+        rb.velocity += Vector3.up * bounce;
+    }
 }

@@ -17,6 +17,10 @@ public class FeetBox : MonoBehaviour
         {
             player.SetGround(true);
         }
+        else if (other.CompareTag("Enemy"))
+        {
+            player.Bounce(15);
+        }
     }
 
     private void OnTriggerExit(Collider other)
