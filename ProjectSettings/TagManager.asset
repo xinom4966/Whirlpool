@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Stomp
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

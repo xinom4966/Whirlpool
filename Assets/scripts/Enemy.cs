@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float healthPoint;
+    [SerializeField] private float healthPoint;
     [SerializeField] private bool isStompable;
 
     private void Update()
