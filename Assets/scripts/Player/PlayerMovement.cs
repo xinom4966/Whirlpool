@@ -82,4 +82,9 @@ public class PlayerMovement : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public Transform GetTransform()
+    {
+        return transform;
+    }
 }
