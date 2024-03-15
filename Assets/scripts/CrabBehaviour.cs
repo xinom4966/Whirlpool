@@ -13,7 +13,7 @@ public class CrabBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Wall"))
+        if (other.CompareTag("Wall") || other.CompareTag("Player"))
         {
             speed = speed * -1;
         }

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Collider groundCheck;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawner;
+    [SerializeField] private float healthPoints;
     private bool isGrounded;
     private Vector2 moveInput;
     public static PlayerMovement instance;
@@ -24,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
+        if (healthPoints <= 0f )
+        {
+            GameOver();
+        }
     }
     public void OnMovementEnter(InputAction.CallbackContext context)
     {
@@ -63,5 +68,18 @@ public class PlayerMovement : MonoBehaviour
     public void Bounce(float bounce)
     {
         rb.velocity += Vector3.up * bounce;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            healthPoints--;
+        }
+    }
+
+    private void GameOver()
+    {
+        Destroy(gameObject);
     }
 }
