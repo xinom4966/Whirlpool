@@ -19,6 +19,7 @@ public class FeetBox : MonoBehaviour
         }
         else if (other.CompareTag("Enemy"))
         {
+            player.ammoNum = player.ammoReset;
             player.Bounce(15);
         }
     }

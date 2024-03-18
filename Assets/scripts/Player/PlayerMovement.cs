@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -15,11 +16,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float healthPoints;
     private bool isGrounded;
     private Vector2 moveInput;
+    public int ammoNum;
+    public int ammoReset;
     public static PlayerMovement instance;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        ammoNum = 8;
+        ammoReset = ammoNum;
     }
 
     private void Update()
@@ -28,6 +37,14 @@ public class PlayerMovement : MonoBehaviour
         if (healthPoints <= 0f )
         {
             GameOver();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (rb.velocity.y <= -20f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -20f);
         }
     }
     public void OnMovementEnter(InputAction.CallbackContext context)
@@ -41,16 +58,21 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
+                ammoNum = ammoReset;
                 rb.AddForce(new Vector2(0f, jumpForce));
             }
             else
             {
-                Shoot();
-                if (rb.velocity.y < -0.5f)
+                if (ammoNum > 0)
                 {
-                    rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                    Shoot();
+                    ammoNum--;
+                    if (rb.velocity.y < -0.5f)
+                    {
+                        rb.velocity = new Vector3(rb.velocity.x, -0.5f, rb.velocity.z);
+                    }
+                    rb.velocity += Vector3.up * 0.25f;
                 }
-                rb.velocity += Vector3.up * 0.25f;
             }
         }
     }
