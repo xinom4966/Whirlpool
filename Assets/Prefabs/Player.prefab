@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 3126712941326733093}
   - component: {fileID: 8413501957473017102}
   - component: {fileID: 3265386614167590395}
-  - component: {fileID: 5043445629894184264}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -142,6 +141,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2040863050464951042, guid: fed9cb961ec28cf4da992d1f516a3a89, type: 3}
   bulletSpawner: {fileID: 2724507075309808264}
   healthPoints: 4
+  ammoNum: 0
+  ammoReset: 0
 --- !u!136 &3126712941326733093
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -149,7 +150,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7238757232693670321}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 34264defd6315024a943b3619c87f0c1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -161,10 +162,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.1084342
+  m_Radius: 0.5264077
+  m_Height: 2.0148187
   m_Direction: 1
-  m_Center: {x: 0, y: 0.024096012, z: 0}
+  m_Center: {x: -0.0037727356, y: 0.012529641, z: 0}
 --- !u!114 &8413501957473017102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,29 +255,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 1
---- !u!136 &5043445629894184264
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7238757232693670321}
-  m_Material: {fileID: 13400000, guid: 34264defd6315024a943b3619c87f0c1, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.6
-  m_Height: 2.1084342
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.024096012, z: 0}
 --- !u!1 &8129735771393321988
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,8 +307,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5888748, y: 0.24040198, z: 1}
-  m_Center: {x: -0.00000047683716, y: 0.12938201, z: 0}
+  m_Size: {x: 0.9694853, y: 0.2885704, z: 1}
+  m_Center: {x: -0.0000009536743, y: 0.105297804, z: 0}
 --- !u!114 &5026659508687018548
 MonoBehaviour:
   m_ObjectHideFlags: 0
