@@ -109,4 +109,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return transform;
     }
+
+    public void AddHP(int value)
+    {
+        healthPoints += value;
+    }
 }
