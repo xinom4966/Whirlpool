@@ -6,19 +6,19 @@ public class MapGeneration : MonoBehaviour
 {
     float x = 0;
     float y;
-    float maxY = 3f;
+    float maxX = 3f;
     public List<GameObject> platforms;
     [SerializeField] public GameObject platform;
 
     void Start()
     {
-        while (x <= 24)
+        while (y <= 50)
         {
-            y = Random.Range(0.2f, maxY) * 10;
-            platforms.Add(Instantiate(platform, new Vector3(-1000, y, -1000), transform.rotation));
-            platforms[platforms.Count - 1].transform.position = new Vector3(-12 + x, -5);
-            platforms[platforms.Count - 1].transform.localScale = new Vector2(3.5f, y);
-            x++;
+            x = Random.Range(0.2f, maxX) * 10;
+            platforms.Add(Instantiate(platform, new Vector3(x, -1000, -1000), transform.rotation));
+            platforms[platforms.Count - 1].transform.position = new Vector3(0, -20 + y);
+            platforms[platforms.Count - 1].transform.localScale = new Vector2(x, 0.5f);
+            y++;
         }
 
     }

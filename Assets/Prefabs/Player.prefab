@@ -141,6 +141,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2040863050464951042, guid: fed9cb961ec28cf4da992d1f516a3a89, type: 3}
   bulletSpawner: {fileID: 2724507075309808264}
   healthPoints: 4
+  ammoNum: 0
+  ammoReset: 0
 --- !u!136 &3126712941326733093
 CapsuleCollider:
   m_ObjectHideFlags: 0
