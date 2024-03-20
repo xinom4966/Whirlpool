@@ -21,7 +21,7 @@ public class FeetBox : MonoBehaviour
         {
             player.AddHP(1);
             player.ammoNum = player.ammoReset;
-            player.Bounce(15);
+            player.Bounce(9f);
         }
     }
 

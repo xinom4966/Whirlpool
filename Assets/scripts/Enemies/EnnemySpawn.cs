@@ -16,11 +16,11 @@ public class EnnemySpawn : MonoBehaviour
 
     void Start()
     {
-        while (y >= -150)
+        while (y >= -100)
         {
             x = Random.Range(0.2f, maxX) * 3;
             xPos = Random.Range(-3f, maxXPos) * 3;
-            ySpacing = Random.Range(0, maxSpacing);
+            ySpacing = Random.Range(1, maxSpacing);
             ennemies.Add(Instantiate(enemy, new Vector3(x, 0, 0), transform.rotation));
             ennemies[ennemies.Count - 1].transform.position = new Vector3(xPos, -12 + y);
             y -= ySpacing;
