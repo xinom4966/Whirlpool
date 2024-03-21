@@ -6,7 +6,7 @@ public class MapGeneration : MonoBehaviour
 {
     private float x = 0;
     private float y;
-    private float maxX = 3f;
+    private float maxX = 5f;
     private float xPos = 0;
     private float maxXPos = 3f;
     private float ySpacing = 0;
@@ -19,7 +19,7 @@ public class MapGeneration : MonoBehaviour
     {
         while (y >= -100)
         {
-            x = Random.Range(0.2f, maxX) * 3;
+            x = Random.Range(0.2f, maxX) * 2;
             xPos = Random.Range(-3f, maxXPos) *3;
             ySpacing = Random.Range(1, maxSpacing);
             platforms.Add(Instantiate(platform, new Vector3(x, 0, 0), transform.rotation));
