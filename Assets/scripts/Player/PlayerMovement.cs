@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -102,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void GameOver()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
     public Transform GetTransform()

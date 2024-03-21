@@ -321,7 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemies: []
-  enemy: {fileID: 5699033157388521078, guid: f63e41e54bb68d94f828160cbbff722a, type: 3}
+  enemy1: {fileID: 245132877529529412, guid: cbf6e534ba3b6ad49ab30be6efeff1f4, type: 3}
+  enemy2: {fileID: 5699033157388521078, guid: f63e41e54bb68d94f828160cbbff722a, type: 3}
 --- !u!1001 &1612617838
 PrefabInstance:
   m_ObjectHideFlags: 0
