@@ -185,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms: []
   platform: {fileID: 7216091472321869750, guid: 4e8037d3d345e7f4ea13e1e42ca097ac, type: 3}
+  endZone: {fileID: 7063834360187256926, guid: d5fa899574b67fa428100418e2208be2, type: 3}
 --- !u!4 &885468590
 Transform:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341939649651482254, guid: df1f27b60f213d740992c537c9f1c4be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8341939649651482254, guid: df1f27b60f213d740992c537c9f1c4be, type: 3}
       propertyPath: m_LocalPosition.y
@@ -533,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341939649651482254, guid: df1f27b60f213d740992c537c9f1c4be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 8341939649651482254, guid: df1f27b60f213d740992c537c9f1c4be, type: 3}
       propertyPath: m_LocalPosition.y

@@ -9,6 +9,7 @@ TagManager:
   - Stomp
   - Enemy
   - Wall
+  - TimeVoidZone
   layers:
   - Default
   - TransparentFX
